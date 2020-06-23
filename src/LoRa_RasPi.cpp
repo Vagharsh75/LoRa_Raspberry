@@ -220,11 +220,7 @@ void LoRa::setFrequency(uint32_t frequency)
 void LoRa::setSyncWord(uint8_t sw=0x34)
 {
     this->_sw = sw;
-    if (!isBeginCalled) {
-        writeReg(REG_SYNC_WORD, sw);
-    } else {
-        printf("Call setSyncWord() before begin()\n");
-    }
+    writeReg(REG_SYNC_WORD, sw);
 }
 
 void LoRa::setSpreadingFactor(uint8_t sf=7)
@@ -429,6 +425,13 @@ uint32_t LoRa::getLoRaFreq(){
 
 byte LoRa::ReceivedBytes() {
     return this->_receivedbytes;
+}
+
+void LoRa::dumpRegisters()
+{
+  for (byte i = 0; i < 128; i++) {
+	printf("0x%x : 0x%x\n", i & 0xff, readReg(i) & 0xff);
+  }
 }
 
 // Stepper constructor
