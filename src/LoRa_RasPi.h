@@ -48,6 +48,7 @@ public:
 	uint8_t getSF();
 	uint32_t getLoRaFreq();
 	uint8_t ReceivedBytes();
+	void dumpRegisters();
 	LoRa();
 	~LoRa();
 	int begin(uint32_t frequency);
