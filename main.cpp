@@ -29,7 +29,12 @@ int main (int argc, char *argv[]) {
         printf("Listening at SF%i on %.6lf Mhz.\n", MyLora.getSF(),(double)(MyLora.getLoRaFreq())/1000000);
         printf("------------------\n");
         while(1) {
-            MyLora.receivepacket(); 
+            //MyLora.receivepacket();
+            byte* message = new byte[256];
+            if (MyLora.receive(message) & MyLora.dio0State()){
+                printf("Payload: %s\n", message);
+	    }
+            delete[] message;
             delay(1);
         }
 
