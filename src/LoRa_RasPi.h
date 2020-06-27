@@ -4,7 +4,7 @@
 #include <stdint.h>
 #include <cstdio>
 #include <cstdlib>
-#include <string.h> 
+#include <string.h>
 #include <wiringPi.h>
 #include <wiringPiSPI.h>
 typedef bool boolean;
@@ -35,7 +35,7 @@ public:
 	void setFrequency(uint32_t frequency);
 	void setSyncWord(uint8_t sw);
 	void setSpreadingFactor(uint8_t sf);
-	boolean receive(char *payload);
+	boolean receive(byte *payload);
 	int packetRssi();
 	int Rssi();
 	long int packetSnr();
@@ -47,7 +47,8 @@ public:
 	void configReceiver();
 	uint8_t getSF();
 	uint32_t getLoRaFreq();
-	uint8_t ReceivedBytes();
+	int ReceivedBytes();
+	boolean dio0State();
 	void dumpRegisters();
 	LoRa();
 	~LoRa();
