@@ -133,7 +133,7 @@
 #define SPISPEED               500000
 
 static const int CHANNEL = 0;
-char message[256];
+//char message[256];
 bool isBeginCalled = false;
 bool sx1272 = true;
 enum sf_t { SF6=6, SF7, SF8, SF9, SF10, SF11, SF12 };
@@ -264,7 +264,7 @@ void LoRa::setSpreadingFactor(uint8_t sf=7)
     }
 }
 
-boolean LoRa::receive(char *payload) {
+boolean LoRa::receive(byte *payload) {
     // clear rxDone
     writeReg(REG_IRQ_FLAGS, 0x40);
 
@@ -286,7 +286,8 @@ boolean LoRa::receive(char *payload) {
 
         for(int i = 0; i < receivedCount; i++)
         {
-            payload[i] = (char)readReg(REG_FIFO);
+            //payload[i] = (char)readReg(REG_FIFO);
+            payload[i] = readReg(REG_FIFO);
         }
     }
     return true;
@@ -331,16 +332,18 @@ long int LoRa::packetSnr()
 }
 
 void LoRa::receivepacket() {
-    if(digitalRead(this->_dio0) == 1)
+    if(dio0State())
     {
+        byte* message = new byte[256];
         if(receive(message)) {
             printf("Packet RSSI: %d, ", packetRssi());
             printf("RSSI: %d, ", Rssi());
             printf("SNR: %li, ", packetSnr());
-            printf("Length: %i", (int)(this->_receivedbytes));
+            printf("Length: %i", ReceivedBytes());
             printf("\n");
             printf("Payload: %s\n", message);
         } // received a message
+        delete[] message;
 
     } // dio0=1
 }
@@ -423,8 +426,12 @@ uint32_t LoRa::getLoRaFreq(){
     return this->_LoRaFreq;
 }
 
-byte LoRa::ReceivedBytes() {
-    return this->_receivedbytes;
+int LoRa::ReceivedBytes() {
+    return (int)(this->_receivedbytes);
+}
+
+boolean LoRa::dio0State(){
+	return digitalRead(this->_dio0);
 }
 
 void LoRa::dumpRegisters()
