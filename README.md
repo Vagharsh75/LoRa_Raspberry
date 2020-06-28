@@ -5,6 +5,7 @@ Tested with Raspberry Pi 4B and LoRa with chip SX1276
 
 cd /tmp
 wget https://project-downloads.drogon.net/wiringpi-latest.deb
+
 sudo dpkg -i wiringpi-latest.deb
 
 Check version
