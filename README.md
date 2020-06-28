@@ -11,7 +11,7 @@ sudo dpkg -i wiringpi-latest.deb
 Check version
 gpio -v
 
-Connect LoRa with Raspberry Pi 4B
+2.Connect LoRa with Raspberry Pi 4B
 <table>
 	<tr>
 		<td>LoRa SX1276</td><td>Raspberry Pi 4B</td>
