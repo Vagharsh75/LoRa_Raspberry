@@ -11,16 +11,14 @@ Check version
 gpio -v
 
 Connect LoRa with Raspberry Pi 4B
-_________________________________________________
-|	LoRa SX1276	|	Raspberry Pi 4B	|
-|	3.3v		|	3.3v		|
-|	GND		|	GND		|
-|	NSS		|	GPIO.21		|
-|	DIO0		|	GPIO.22		|
-|	RESET		|	GPIO.23		|
-|	MOSI		|	MOSI		|
-|	MISO		|	MISO		|
-|	SCK		|	SKC		|
+<table>
+	<th>
+		<td>LoRa SX1276</td><td>Raspberry Pi 4B</td>
+	</th>
+	<tr>
+		<td>3.3v</td><td>3.3v</td>
+	</tr>
+</table>
 
 3.Compile code with -lwiringpi options
 
