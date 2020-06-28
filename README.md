@@ -11,6 +11,7 @@ Check version
 gpio -v
 
 Connect LoRa with Raspberry Pi 4B
+_________________________________________________
 |	LoRa SX1276	|	Raspberry Pi 4B	|
 |	3.3v		|	3.3v		|
 |	GND		|	GND		|
