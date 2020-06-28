@@ -12,9 +12,9 @@ gpio -v
 
 Connect LoRa with Raspberry Pi 4B
 <table>
-	<th>
+	<tr>
 		<td>LoRa SX1276</td><td>Raspberry Pi 4B</td>
-	</th>
+	</tr>
 	<tr>
 		<td>3.3v</td><td>3.3v</td>
 	</tr>
