@@ -18,6 +18,27 @@ Connect LoRa with Raspberry Pi 4B
 	<tr>
 		<td>3.3v</td><td>3.3v</td>
 	</tr>
+	<tr>
+		<td>GND</td><td>GND</td>
+	</tr>
+	<tr>
+		<td>NSS</td><td>GPIO.21</td>
+	</tr>
+	<tr>
+		<td>DIO0</td><td>GPIO.22</td>
+	</tr>
+	<tr>
+		<td>RESET</td><td>GPIO.23</td>
+	</tr>
+	<tr>
+		<td>MOSI</td><td>MOSI</td>
+	</tr>
+	<tr>
+		<td>MISO</td><td>MISO</td>
+	</tr>
+	<tr>
+		<td>SCK</td><td>SCK</td>
+	</tr>
 </table>
 
 3.Compile code with -lwiringpi options
