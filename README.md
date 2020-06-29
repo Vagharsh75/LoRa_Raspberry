@@ -3,13 +3,7 @@ Tested with Raspberry Pi 4B and LoRa with chip SX1276
 
 1.Install wiringpi, update with version 2.52
 
-cd /tmp
-wget https://project-downloads.drogon.net/wiringpi-latest.deb
-
-sudo dpkg -i wiringpi-latest.deb
-
-Check version
-gpio -v
+sudo make update
 
 2.Connect LoRa with Raspberry Pi 4B
 <table>
@@ -76,10 +70,13 @@ My LoRa library have this public functions -
 	int begin(uint32_t frequency);
 
 3.Run
-sudo make update
+
 make
 
 4.run 
+
 ./main rec
-  or
+
+or
+
 ./main sender
