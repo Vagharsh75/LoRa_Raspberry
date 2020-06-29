@@ -42,8 +42,6 @@ gpio -v
 	</tr>
 </table>
 
-3.Compile code with -lwiringpi options
-
 
 My LoRa library have this public functions -
 
@@ -77,4 +75,11 @@ My LoRa library have this public functions -
 	~LoRa();
 	int begin(uint32_t frequency);
 
-4.Run make file
+3.Run
+sudo make update
+make
+
+4.run 
+./main rec
+  or
+./main sender
