@@ -76,3 +76,5 @@ My LoRa library have this public functions -
 	LoRa();
 	~LoRa();
 	int begin(uint32_t frequency);
+
+4.Run make file
